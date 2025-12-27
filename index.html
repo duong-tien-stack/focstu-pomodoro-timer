@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FOCSTU</title>
+		<link rel="stylesheet" href="./index.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./icons/icon180.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./icons/logo_icon32.png" />
+		<link rel="manifest" href="./site.webmanifest" />
+		<meta name="theme-color" id="theme-meta" content="#252422ff" />
+	</head>
+	<body>
+		<div id="taskswitcher">
+			<button id="statbtn" title="View Statistics">
+				<span id="statline1"></span>
+				<span id="statline2"></span>
+				<span id="statline3"></span>
+			</button>
+			<select name="task" id="task-select" title="Switch Task"></select>
+			<div id="no-task-title" title="No Task Found">Add task -></div>
+			<button id="managetaskbtn" title="Manage Task">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="-7.5 0 32 32">
+				<path d="M14.36 7.040h-0.24v-1.36c0-0.48-0.36-0.84-0.84-0.84s-0.84 0.36-0.84 0.84v1.36h-1.6v-1.36c0-0.48-0.36-0.84-0.84-0.84s-0.84 0.36-0.84 0.84v1.36h-1.6v-1.36c0-0.48-0.36-0.84-0.84-0.84s-0.84 0.36-0.84 0.84v1.36h-1.6v-1.36c0-0.48-0.36-0.84-0.84-0.84s-0.84 0.36-0.84 0.84v1.36h-0.24c-1.32 0-2.36 1.040-2.36 2.36v15.36c0 1.32 1.040 2.36 2.36 2.36h12c1.32 0 2.36-1.040 2.36-2.36v-15.36c0-1.28-1.080-2.36-2.36-2.36zM15.040 24.76c0 0.36-0.32 0.68-0.68 0.68h-12c-0.36 0-0.68-0.32-0.68-0.68v-15.36c0-0.36 0.32-0.68 0.68-0.68h0.24v1.36c0 0.48 0.36 0.84 0.84 0.84s0.84-0.36 0.84-0.84v-1.36h1.6v1.36c0 0.48 0.36 0.84 0.84 0.84s0.84-0.36 0.84-0.84v-1.36h1.6v1.36c0 0.48 0.36 0.84 0.84 0.84s0.84-0.36 0.84-0.84v-1.36h1.6v1.36c0 0.48 0.36 0.84 0.84 0.84s0.84-0.36 0.84-0.84v-1.36h0.24c0.36 0 0.68 0.32 0.68 0.68v15.36z"/>
+			</svg>
+			</button>
+		</div>
+		<div id="fblink">
+			<button id="link"></button>
+			<a id="fb" href="https://www.facebook.com/profile.php?id=61584693218387"></a>
+		</div>
+		<div id="menubutton">
+			<button id="menubtn" title="Open Settings">
+        	<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#d7d9ce" class="icon">
+        		<path stroke-linecap="round" stroke-linejoin="round"
+          		d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+        		<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+      		</svg>
+			</button>
+		</div>
+		<main id="main">
+			<div id="timer" class="t-focus">
+				<svg id="ring" viewbox="0 0 100 100">
+					<circle id="secondary" cx="53.7" cy="46.7" r="45" fill="none" />
+					<circle id="progress" cx="53.7" cy="46.7" r="45" fill="none" pathlength="100" />
+				</svg>
+				<div id="time"></div>
+				<div id="status">
+					<span id="s-focus">FOCUS</span>
+					<span id="s-short">SHORT BREAK</span>
+					<span id="s-long">LONG BREAK</span>
+				</div>
+				<div id="roundno" title="Number of Focus Rounds"></div>
+			</div>
+			<div id="timer-btns">
+				<button id="resetround" title="Reset Current Timer">
+				<svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M 13.15625 0.45507812 L 11.310547 2.140625 L 12.146484 3.0546875 C 12.102665 3.0541348 12.059565 3.0507812 12.015625 3.0507812 C 6.5270242 3.0507812 2.0507813 7.5270242 2.0507812 13.015625 C 2.0507813 18.504226 6.5270242 22.980469 12.015625 22.980469 C 17.504226 22.980469 21.980469 18.504226 21.980469 13.015625 C 21.980469 10.890091 21.311664 8.9070503 20.171875 7.2871094 L 19.451172 6.2636719 L 17.408203 7.703125 L 18.126953 8.7246094 C 18.981164 9.9386685 19.480469 11.413159 19.480469 13.015625 C 19.480469 17.153024 16.153024 20.480469 12.015625 20.480469 C 7.8782258 20.480469 4.5507812 17.153024 4.5507812 13.015625 C 4.5507813 8.9619868 7.7470817 5.6934888 11.767578 5.5625 L 11.011719 6.2246094 L 12.658203 8.1054688 L 16.820312 4.4628906 L 13.15625 0.45507812 z"/>
+				</svg>
+				<button id="pauseplay" class="paused" title="Start Timer">
+					<svg id="playing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+						<path
+							d="M18 32h4V16h-4v16zm6-28C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16zm2-8h4V16h-4v16z"
+						/>
+					</svg>
+					<svg id="paused" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+						<path
+							d="M20 33l12-9-12-9v18zm4-29C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16z"
+						/>
+					</svg>
+				</button>
+				<button id="next" title="Next Round">
+				<svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+					<path d="M12 36l17-12-17-12v24zm20-24v24h4V12h-4z" />
+				</svg>
+			</button>
+			</div>
+			</button>
+			<div id="slider-container">
+				<div id="slider-overlay" class="disabled">
+					<span id="volume-value">80</span>
+					<input type="range" orient="vertical" id="volume-slider" min="0" max="100" step="1" value="80" />
+				</div>
+				<button id="volume-button" title="Adjust White Noise Volume">
+					<svg id="volume-icon" class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+						<path
+							d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320ZM400-606l-86 86H200v80h114l86 86v-252ZM300-480Z"
+						/>
+					</svg>
+					<svg
+						id="volume-muted-icon"
+						class="svg-icon"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 -960 960 960"
+					>
+						<path
+							xmlns="http://www.w3.org/2000/svg"
+							d="M792-56 671-177q-25 16-53 27.5T560-131v-82q14-5 27.5-10t25.5-12L480-368v208L280-360H120v-240h128L56-792l56-56 736 736-56 56Zm-8-232-58-58q17-31 25.5-65t8.5-70q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 53-14.5 102T784-288ZM650-422l-90-90v-130q47 22 73.5 66t26.5 96q0 15-2.5 29.5T650-422ZM480-592 376-696l104-104v208Zm-80 238v-94l-72-72H200v80h114l86 86Zm-36-130Z"
+						/>
+					</svg>
+				</button>
+			</div>
+		</main>
+		<div id="menu" class="scrollbar">
+			<div class="menu-title">
+				Settings
+				<button id="closemenu" class ="crossbtn" title="Close Settings"></button>
+			</div>
+			<div class="content">
+				<section class="section">
+					<h2>Timer</h2>
+					<div class="setting">
+						<label for="focus-input">Focus: <span></span></label>
+						<div class="input-holder">
+							<button class="ibtn" id="focus-dec">-</button>
+							<input type="number" name="focus-input" id="focus-input" min="1" max="180" />
+							<button class="ibtn" id="focus-inc">+</button>
+							minutes
+						</div>
+					</div>
+					<div class="setting">
+						<label for="short-input">Short Break: <span></span></label>
+						<div class="input-holder">
+							<button class="ibtn" id="short-dec">-</button>
+							<input type="number" name="short-input" id="short-input" min="1" max="180" />
+							<button class="ibtn" id="short-inc">+</button>
+							minutes
+						</div>
+					</div>
+					<div class="setting">
+						<label for="long-input">Long Break: <span></span></label>
+						<div class="input-holder">
+							<button class="ibtn" id="long-dec">-</button>
+							<input type="number" name="long-input" id="long-input" min="1" max="180" />
+							<button class="ibtn" id="long-inc">+</button>
+							minutes
+						</div>
+					</div>
+					<div class="setting">
+						<label for="rounds-input">Rounds</label>
+						<br />
+						Number of focus sessions between long breaks.
+						<div class="input-holder">
+							<button class="ibtn" id="rounds-dec">-</button>
+							<input type="number" name="rounds-input" id="rounds-input" min="1" max="18" />
+							<button class="ibtn" id="rounds-inc">+</button>
+							rounds
+						</div>
+					</div>
+				</section>
+				<section class="section">
+					<h2>Appearance</h2>
+					<div class="setting">
+					<h3>Select theme type:<h3>
+						<label for="theme-select">Theme:</label>
+						<select name="theme" id="theme-select" title="Theme">
+							<option value="dark" id="t-dark" selected>Dark</option>
+							<option value="light" id="t-light">Light</option>
+						</select>
+						<div>
+							<input type="radio" id="presetcolor" class="theme-type" value="preset">
+							<label for="presetcolor">Preset</label><br>
+							<div id="typeColor" class="disabled">
+								<div class="setting" id="accents">
+									<h4>Accent Color:</h4>
+									<div id="colors"></div>
+								</div>
+							</div>
+							<input type="radio" id="custom" class="theme-type" value="custom">
+							<label for="custom">Custom</label>
+							<div id="yu" class="disabled">
+								<label for="input">Select base color:</label>
+								<input id="input" class="colorselect" type="color">
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="section">
+					<h2>Notifications</h2>
+					<div class="setting">
+						<label for="notif-select">Notifications:</label>
+						<select name="notif" id="notif-select" title="Notification Type">
+							<option value="enabled">Enabled</option>
+							<option value="silent">Silent</option>
+							<option value="disabled">Disabled</option>
+						</select>
+						<br /><br />
+						Make sure that your browser allows notifications from this site.
+					</div>
+				</section>
+				<section>
+					<h2>White noise</h2>
+					<div class="setting">
+						<label for="audio-select">White noise:</label>
+						<select name="audio" id="audio-select" title="Notification Type">
+							<option value="disabled" selected>Disabled</option>
+							<option value="noise">Enabled</option>
+						</select>
+						<br /><br />
+						Turn white noise on or off.
+					</div>
+				</section>
+			</div>
+		</div>
+		<div id="statistics" class="scrollbar">
+			<div class="menu-title">
+				Statistics
+				<button id="closestats" class="crossbtn" title="Close Statistics"></button>
+			</div>
+			<div class="content">
+				<div class="setting">
+					<h3>Show Statistics of:</h3>
+					<div id="filters" class="scrollbar">
+						<label class="task-chip">
+							<input type="checkbox" id="all" checked />
+							<span class="chip-task-name">All Tasks</span>
+						</label>
+					</div>
+				</div>
+				<div class="setting">
+					<label for="stat-time-select">Time Period: </label>
+					<select id="stat-time-select">
+						<option value="0">Today</option>
+						<option value="1">Past Day</option>
+						<option value="7" selected>Past Week</option>
+						<option value="365">Past Year</option>
+						<option value="all">All Time</option>
+					</select>
+				</div>
+				<br /><br />
+				<h2>Overview</h2>
+				<div id="stat-summary" class="remark">
+					You focused for a total duration of
+					<span id="stat-summary-total"></span>
+					consisting of
+					<span id="stat-summary-rounds"></span>
+					Focus Rounds with an average round duration of
+					<span id="stat-summary-average"></span>
+					<br /><br />
+					Shortest round duration: <span id="stat-summary-shortest"></span>
+					<br />
+					Longest round duration: <span id="stat-summary-longest"></span>
+				</div>
+				<h2>Time Distribution:</h2>
+				<div id="pie-container">
+					<div id="pie">
+						<svg viewbox="0 0 120 120"></svg>
+					</div>
+					<div id="pie-card-container" class="scrollbar"></div>
+				</div>
+				<h2>Time Spent per Task:</h2>
+				<div id="timespent" class="stat-chart scrollbar"></div>
+				<br /><br />
+				<h2>Time Spent per 6 Hours:</h2>
+				<div id="timesixhourly" class="stat-chart scrollbar">
+					<div class="task-bar-container">
+						<div class="legend">00:00 - 06:00</div>
+						<div class="bar-container">
+							<div class="bar" id="hourly-0-6">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">06:00 - 12:00</div>
+						<div class="bar-container">
+							<div class="bar" id="hourly-6-12">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">12:00 - 18:00</div>
+						<div class="bar-container">
+							<div class="bar" id="hourly-12-18">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">18:00 - 24:00</div>
+						<div class="bar-container">
+							<div class="bar" id="hourly-18-24">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="remark-hourly" class="remark">
+					You were most productive between <span class="remark-value"></span>
+				</div>
+				<h2>Time Spent per Day:</h2>
+				<div id="timedaily" class="stat-chart scrollbar">
+					<div class="task-bar-container">
+						<div class="legend">Monday</div>
+						<div class="bar-container">
+							<div class="bar" id="day-monday">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">Tuesday</div>
+						<div class="bar-container">
+							<div class="bar" id="day-tuesday">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">Wednesday</div>
+						<div class="bar-container">
+							<div class="bar" id="day-wednesday">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">Thursday</div>
+						<div class="bar-container">
+							<div class="bar" id="day-thursday">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">Friday</div>
+						<div class="bar-container">
+							<div class="bar" id="day-friday">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">Saturday</div>
+						<div class="bar-container">
+							<div class="bar" id="day-saturday">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">Sunday</div>
+						<div class="bar-container">
+							<div class="bar" id="day-sunday">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="remark-daily" class="remark">
+					You were most productive on <span class="remark-value"></span>
+				</div>
+				<h2>Time Spent per Month:</h2>
+				<div id="timemonthly" class="stat-chart scrollbar">
+					<div class="task-bar-container">
+						<div class="legend">January</div>
+						<div class="bar-container">
+							<div class="bar" id="month-january">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">February</div>
+						<div class="bar-container">
+							<div class="bar" id="month-february">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">March</div>
+						<div class="bar-container">
+							<div class="bar" id="month-march">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">April</div>
+						<div class="bar-container">
+							<div class="bar" id="month-april">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">May</div>
+						<div class="bar-container">
+							<div class="bar" id="month-may">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">June</div>
+						<div class="bar-container">
+							<div class="bar" id="month-june">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">July</div>
+						<div class="bar-container">
+							<div class="bar" id="month-july">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">August</div>
+						<div class="bar-container">
+							<div class="bar" id="month-august">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">September</div>
+						<div class="bar-container">
+							<div class="bar" id="month-september">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">October</div>
+						<div class="bar-container">
+							<div class="bar" id="month-october">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">November</div>
+						<div class="bar-container">
+							<div class="bar" id="month-november">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+					<div class="task-bar-container">
+						<div class="legend">December</div>
+						<div class="bar-container">
+							<div class="bar" id="month-december">
+								<div class="stat-value">21:11</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="remark-monthly" class="remark">
+					You were most productive in <span class="remark-value"></span>
+				</div>
+				<details id="stat-details">
+					<summary><h2>Your Highest Streaks</h2></summary>
+					<div id="round-entries"></div>
+				</details>
+			</div>
+		</div>
+		<div id="managetasks" class="scrollbar">
+			<div class="menu-title">
+				Tasks
+				<button id="closetasks" class="crossbtn" title="Return to main screen"></button>
+			</div>
+			<div class="content">
+				<h2>Your Tasks</h2>
+				Here you can manage your tasks.
+				<br /><br />
+				<div id="task-container"></div>
+				<form id="newtask" class="task">
+					<input
+						id="new-task-name"
+						name="taskname"
+						type="text"
+						min="1"
+						maxlength="25"
+						placeholder="Add New Task"
+					/>
+					<button type="submit" title="Create new task" class="crossbtn" id="new-task-btn"></button>
+				</form>
+			</div>
+		</div>
+		<script src="./index.js"></script>
+	</body>
+</html>
