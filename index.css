@@ -71,16 +71,16 @@ body {
 	display: flex;
 	left: 0;
 	top: 0;
-	width: 150px;
-	height: 45px;
+	width: 110px;
+	height: 35px;
 	overflow: auto;
 	z-index: 3;
 }
 
 #link {
-	background: url(icons/logo.png);
-	width: 134px;
-	height: 40px;
+	background: url(icons/logofocstu.png);
+	width: 100px;
+	height: 30px;
 	position: relative;
 	display: grid;
 	cursor: pointer;
