@@ -1,3 +1,6 @@
+if ("serviceWorker" in navigator) {
+	navigator.serviceWorker.register("./sw.js");
+}
 
 let timerWorker = new Worker("./worker.js");
 
