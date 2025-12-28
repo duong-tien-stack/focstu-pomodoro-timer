@@ -234,6 +234,27 @@ notifSelect.addEventListener("change", function () {
 	localStorage.setItem("pomo-notif", this.value);
 });
 
+let interval
+let reminder
+document.addEventListener("visibilitychange", () => {
+	if (roundInfo.running) {
+		if (roundInfo.current === "focus") {
+			if (document.visibilityState === "hidden") {
+				const leavetime = new Date();
+				interval = setInterval(() => {
+					reminder = new Notification("Stay focused!", {
+						body: `Remember to do your task! ${Math.floor((config[roundInfo.current] / 60) - ((new Date() - leavetime) / 60000))} minutes left on your timer`,
+						tag: "reminder",
+					})
+				},300000)
+			} else {
+				if (interval) clearInterval(interval);
+				if (reminder) reminder.close();
+			}
+		}
+	}
+})
+
 function notify(title, message) {
 	if (!notificationEnabled) return;
 	if (!("Notification" in window)) {
