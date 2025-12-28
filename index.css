@@ -69,18 +69,18 @@ body {
 #fblink {
 	position: absolute;
 	display: flex;
-	left: 2vmin;
-	top: 2vmin;
-	width: 30vmin;
-	height: 9vmin;
+	left: 0;
+	top: 0;
+	width: 150px;
+	height: 45px;
 	overflow: auto;
 	z-index: 3;
 }
 
 #link {
 	background: url(icons/logo.png);
-	width: 26vmin;
-	height: 8vmin;
+	width: 134px;
+	height: 40px;
 	position: relative;
 	display: grid;
 	cursor: pointer;
